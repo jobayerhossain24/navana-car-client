@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import img from "../../assets/images/login/login.svg";
 import { AuthContext } from "../../providers/AuthProviders";
+
 const Login = () => {
   const { signIn } = useContext(AuthContext);
 
@@ -61,7 +62,7 @@ const Login = () => {
                 <input
                   className="btn btn-primary"
                   type="submit"
-                  value="login"
+                  value="Login"
                 />
               </div>
             </form>
