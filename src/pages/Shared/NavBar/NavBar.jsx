@@ -1,12 +1,12 @@
-// import { useContext } from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
-import logo from "../../../assets/logo.svg";
-import useAuth from "../../../hooks/useAuth";
-// import { AuthContext } from "../../../providers/AuthProviders";
+import logo from "../../../assets/logo2.webp";
+// import useAuth from "../../../hooks/useAuth";
+import { AuthContext } from "../../../providers/AuthProviders";
 
 const NavBar = () => {
-  // const { user, logOut } = useContext(AuthContext);
-  const { user, logOut } = useAuth();
+  const { user, logOut } = useContext(AuthContext);
+  // const { user, logOut } = useAuth();
 
   const handleLogOut = () => {
     logOut()
@@ -16,29 +16,54 @@ const NavBar = () => {
   const navItems = (
     <>
       <li>
-        <Link to="/">Home</Link>
+        <Link className="hover:bg-gray-800" to="/">
+          Home
+        </Link>
       </li>
       <li>
-        <Link to="/about">About</Link>
+        <Link className="hover:bg-gray-800" to="/about">
+          About
+        </Link>
+      </li>
+      <li>
+        <Link className="hover:bg-gray-800" to="/services">
+          Services
+        </Link>
+      </li>
+      <li>
+        <Link className="hover:bg-gray-800" to="/products">
+          Products
+        </Link>
+      </li>
+      <li>
+        <Link className="hover:bg-gray-800" to="/contact">
+          Contact
+        </Link>
       </li>
       {user?.email ? (
         <>
           <li>
-            <Link to="/bookings">My Bookings</Link>{" "}
+            <Link className="hover:bg-gray-800" to="/bookings">
+              My Bookings
+            </Link>
           </li>
           <li>
-            <button onClick={handleLogOut}>Log out </button>
+            <button className="hover:bg-gray-800" onClick={handleLogOut}>
+              Log out{" "}
+            </button>
           </li>
         </>
       ) : (
         <li>
-          <Link to="/login">Login</Link>
+          <Link className="hover:bg-gray-800" to="/login">
+            Login
+          </Link>
         </li>
       )}
     </>
   );
   return (
-    <div className="navbar bg-base-100 h-28 mb-4">
+    <div className="navbar bg-gray-700 text-white   h-16 mb-6 rounded-b-lg">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -59,20 +84,22 @@ const NavBar = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow "
           >
             {navItems}
           </ul>
         </div>
-        <Link className="btn btn-ghost text-xl">
-          <img src={logo} alt="" />
-        </Link>
+        <div className="flex ">
+          <Link to="/" className="btn btn-ghost text-xl">
+            <img className="w-14" src={logo} alt="" />
+          </Link>
+          <p className="py-3">
+            <span className="text-4xl text-red-600 font-bold">N</span>avana
+          </p>
+        </div>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">{navItems}</ul>
-      </div>
-      <div className="navbar-end">
-        <button className="btn btn-outline btn-warning">Appointment</button>
+        <ul className="menu menu-horizontal px-1 ">{navItems}</ul>
       </div>
     </div>
   );

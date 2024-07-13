@@ -2,7 +2,7 @@ import parts from "../../../assets/images/about_us/parts.jpg";
 import person from "../../../assets/images/about_us/person.jpg";
 const About = () => {
   return (
-    <div className="hero bg-base-200 min-h-screen">
+    <div className="hero bg-base-200 min-h-screen rounded-lg mt-4">
       <div className="hero-content flex-col lg:flex-row">
         <div className="lg:w-1/2 relative">
           <img src={person} className="w-3/4 rounded-lg shadow-2xl" />
@@ -16,17 +16,18 @@ const About = () => {
           <h1 className="text-5xl font-bold">
             We are qualified & of experience in this field
           </h1>
-          <p className="py-6">
-            There are many variations of passages of Lorem Ipsum available, but
-            the majority have suffered alteration in some form, by injected
-            humour, or randomised words which do not look even slightly
-            believable.
+          <p className="py-2">
+            We believe a well-maintained vehicle will run better, last longer,
+            have higher resale value, and save you money in the long run. We
+            believe that only through clarifying and then living up to our
+            customers’ expectations, can we hope to earn their ongoing loyalty.
           </p>
-          <p className="py-6">
-            There are many variations of passages of Lorem Ipsum available, but
-            the majority have suffered alteration in some form, by injected
-            humour, or randomised words which do not look even slightly
-            believable.
+          <p className="py-2">
+            All parts and labor are guaranteed for at least 12 months or 12,000
+            miles from the initial service date unless otherwise stated on your
+            invoice and not to exceed manufactures warranty. We use only
+            high-quality parts backed by a national warranty. If requested, we
+            will make available your replaced parts.
           </p>
           <button className="btn btn-warning">Get More Info</button>
         </div>

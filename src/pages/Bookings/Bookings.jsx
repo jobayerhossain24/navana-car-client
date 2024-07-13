@@ -1,4 +1,4 @@
-import axios from "axios";
+// import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../providers/AuthProviders";
 import BookingRow from "./BookingRow";
@@ -7,21 +7,20 @@ const Bookings = () => {
   const { user } = useContext(AuthContext);
   const [bookings, setBookings] = useState([]);
 
-  const url = `http://localhost:5000/bookings?email=${user?.email}`;
+  // const url = `https://navana-car-server.vercel.app/bookings?email=${user?.email}`;
+  const url = `/services.json/bookings?email=${user?.email}`;
 
   useEffect(() => {
-    axios.get(url, { withCredentials: true }).then((res) => {
-      setBookings(res.data);
-    });
-    // fetch(url)
-    //   .then((res) => res.json())
-    //   .then((data) => setBookings(data));
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => setBookings(data));
   }, [url]);
 
   const handleDelete = (id) => {
     const proceed = confirm("Are you sure want to delete?");
     if (proceed) {
-      fetch(`http://localhost:5000/bookings/${id}`, {
+      // fetch(`https://navana-car-server.vercel.app/bookings/${id}`, {
+      fetch(`/services.json/bookings/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
@@ -37,7 +36,7 @@ const Bookings = () => {
   };
 
   const handleBookingConfirm = (id) => {
-    fetch(`http://localhost:5000/bookings/${id}`, {
+    fetch(`https://navana-car-server.vercel.app/bookings/${id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",

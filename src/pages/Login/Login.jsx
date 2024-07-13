@@ -1,14 +1,12 @@
-import axios from "axios";
-
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import img from "../../assets/images/login/login.svg";
-import useAuth from "../../hooks/useAuth";
-// import { AuthContext } from "../../providers/AuthProviders";
-// import { useContext } from "react";
+// import useAuth from "../../hooks/useAuth";
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProviders";
 
 const Login = () => {
-  // const { signIn } = useContext(AuthContext);
-  const { signIn } = useAuth();
+  const { signIn, signInWithGoogle } = useContext(AuthContext);
+  // const { signIn } = useAuth();
   const location = useLocation();
   const navigate = useNavigate();
   console.log(location);
@@ -23,20 +21,22 @@ const Login = () => {
       .then((result) => {
         const loggedInUser = result.user;
         console.log(loggedInUser);
-        const user = { email };
-
-        // get access token
-        axios
-          .post("http://localhost:5000/jwt", user, { withCredentials: true })
-          .then((res) => {
-            console.log(res.data);
-            if (res.data.success) {
-              navigate(location?.state ? location?.state : "/");
-            }
-          });
+        navigate(location?.state ? location?.state : "/");
       })
+
       .catch((error) => console.log(error));
   };
+
+  const handleGoogleSignIn = () => {
+    signInWithGoogle()
+      .then((result) => {
+        console.log(result.user);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
   return (
     <div className="hero bg-base-200 min-h-screen">
       <div className="hero-content flex-col lg:flex-row">
@@ -78,7 +78,7 @@ const Login = () => {
               </div>
               <div className="form-control mt-6">
                 <input
-                  className="btn btn-primary"
+                  className="btn btn-primary text-xl"
                   type="submit"
                   value="Login"
                 />
@@ -86,9 +86,20 @@ const Login = () => {
             </form>
             <p className="my-4 text-center">
               New to Car Doctors
-              <Link className="text-orange-600 font-bold" to="/signup">
+              <Link
+                className="text-orange-600 font-bold text-xl ml-2"
+                to="/signup"
+              >
                 Sign Up
               </Link>
+            </p>
+            <p className="my-4 text-center ">
+              <button
+                onClick={handleGoogleSignIn}
+                className="btn btn-warning btn-wide text-green-600 text-xl"
+              >
+                Google
+              </button>
             </p>
           </div>
         </div>
