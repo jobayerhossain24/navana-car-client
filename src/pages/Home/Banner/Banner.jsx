@@ -14,15 +14,9 @@ const Banner = () => {
               Affordable Price For Car Servicing{" "}
             </h2>
             <p>
-              There are many variations of passages of available, but the
-              majority have suffered alteration in some form
+              We believe a well-maintained vehicle will run better, last longer
+              and save you money in the long run.
             </p>
-            <div>
-              <button className="btn btn-primary mr-5">Discover More</button>
-              <button className="btn btn-outline btn-secondary">
-                Latest Project
-              </button>
-            </div>
           </div>
         </div>
         <div className="absolute left-5 right-5 bottom-0  flex -translate-y-1/2 transform justify-end">
@@ -42,15 +36,9 @@ const Banner = () => {
               Affordable Price For Car Servicing{" "}
             </h2>
             <p>
-              There are many variations of passages of available, but the
-              majority have suffered alteration in some form
+              We believe a well-maintained vehicle will run better, last longer
+              and save you money in the long run.
             </p>
-            <div>
-              <button className="btn btn-primary mr-5">Discover More</button>
-              <button className="btn btn-outline btn-secondary">
-                Latest Project
-              </button>
-            </div>
           </div>
         </div>
         <div className="absolute left-5 right-5 bottom-0  flex -translate-y-1/2 transform justify-end">
@@ -70,15 +58,9 @@ const Banner = () => {
               Affordable Price For Car Servicing{" "}
             </h2>
             <p>
-              There are many variations of passages of available, but the
-              majority have suffered alteration in some form
+              We believe a well-maintained vehicle will run better, last longer
+              and save you money in the long run.
             </p>
-            <div>
-              <button className="btn btn-primary mr-5">Discover More</button>
-              <button className="btn btn-outline btn-secondary">
-                Latest Project
-              </button>
-            </div>
           </div>
         </div>
         <div className="absolute left-5 right-5 bottom-0  flex -translate-y-1/2 transform justify-end">
@@ -98,15 +80,9 @@ const Banner = () => {
               Affordable Price For Car Servicing{" "}
             </h2>
             <p>
-              There are many variations of passages of available, but the
-              majority have suffered alteration in some form
+              We believe a well-maintained vehicle will run better, last longer
+              and save you money in the long run.
             </p>
-            <div>
-              <button className="btn btn-primary mr-5">Discover More</button>
-              <button className="btn btn-outline btn-secondary">
-                Latest Project
-              </button>
-            </div>
           </div>
         </div>
         <div className="absolute left-5 right-5 bottom-0  flex -translate-y-1/2 transform justify-end">
